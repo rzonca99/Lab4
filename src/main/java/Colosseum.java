@@ -15,6 +15,10 @@ public class Colosseum {
      */
     static final int MAX_HIT_POINTS = 50;
 
+    static final int MAX_ATTACK = 50;
+
+    static final int MAX_DEFENSE = 50;
+
     /**
      * The maximum number of rounds we will let the Pokemon battle.
      */
@@ -43,7 +47,7 @@ public class Colosseum {
      * <p>
      * Requirements we should check the user for: <br>
      * - Hit points are between 1 and MAX_HIT_POINTS <br>
-     * - No more than 50 points are split between attack level and defense leve <br>
+     * - No more than 50 points are split between attack level and defense level <br>
      * - Attack level and defense level must have at least 1 point each <br>
      * Example of how this will look to the user:
      * <p>
@@ -73,6 +77,16 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        System.out.println("Please name your Pokemon:");
+        tempPokemon.name = myScan.next();
+        System.out.println("How many hit points will it have?");
+            int hitPoints = myScan.nextInt();
+            if (hitPoints < 1 || hitPoints > MAX_HIT_POINTS) {
+                System.out.println("Sorry. Hit points must be between 1 and 50.");
+                //find a way to ask about HP again! a loop of some kind?
+            }
+        System.out.println("Enter your attack level:");
+
         return tempPokemon;
     }
 
